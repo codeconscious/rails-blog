@@ -1,0 +1,21 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<p class='navigation'>
+  <% if @prev_id %>
+    <a href="./<%= @prev_id %>">Previous</a> |
+  <% end %>
+  <a href="/">Back to Articles</a>
+  <% if @next_id  %>
+    | <a href="./<%= @next_id %>">Next</a>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_article_path %> |
+  <%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+</p>
