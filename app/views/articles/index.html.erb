@@ -10,15 +10,14 @@
     <ol>
       <% @articles.each do |article| %>
         <% unless article.archived? %>
-          <li>
-            <%= link_to article.title, article %>
-            ("<%= article.body %>")
-            <br />
-            <small>
-              <%= article.comments.count %>
-              Comment<%= article.comments.count == 1 ? '' : 's' %>
-            </small>
-          </li>
+        <div class="article-summary">
+          <h3><%= link_to article.title, article %></h3>
+          <div><%= article.body %></div>
+          <div class="comment-count">
+            <%= article.comments.count %>
+            Comment<%= article.comments.count == 1 ? '' : 's' %>
+          </div>
+        </div>
         <% end %>
       <% end %>
     </ol>
