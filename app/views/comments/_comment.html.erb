@@ -1,4 +1,6 @@
-<p>
+<% unless comment.archived? %>
+  <p>
   <strong><%= comment.commenter %></strong>:
   <%= comment.body %>
-</p>
+  </p>
+<% end %>
