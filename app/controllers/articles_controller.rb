@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @prev_id = Article.where('id < ?', @article.id)&.last&.id
     @next_id = Article.where('id > ?', @article.id)&.first&.id
+    @first_id = Article.first&.id
+    @last_id = Article.last&.id
   end
 
   def new

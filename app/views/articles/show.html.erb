@@ -15,17 +15,27 @@
 
     <nav>
       <ul>
+        <% if @first_id %>
+          <li>
+            <a href="./<%= @first_id %>" role="button" class="outline">First</a>
+          </li>
+        <% end %>
         <% if @prev_id %>
           <li>
-            <a href="./<%= @prev_id %>" role="button" class="outline">前へ</a>
+            <a href="./<%= @prev_id %>" role="button" class="outline">Previous</a>
           </li>
         <% end %>
         <li>
-          <a href="/" role="button" class="outline">記事一覧</a>
+          <a href="/" role="button" class="outline">Home</a>
         </li>
         <% if @next_id  %>
           <li>
-            <a href="./<%= @next_id %>" role="button" class="outline">次へ</a>
+            <a href="./<%= @next_id %>" role="button" class="outline">Next</a>
+          </li>
+        <% end %>
+        <% if @last_id %>
+          <li>
+            <a href="./<%= @last_id %>" role="button" class="outline">Last</a>
           </li>
         <% end %>
       </ul>
