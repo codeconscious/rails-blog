@@ -7,20 +7,18 @@
 
 <main class="container">
   <section>
-    <ol>
-      <% @articles.each do |article| %>
-        <% unless article.archived? %>
-        <div class="article-summary">
-          <h3><%= link_to article.title, article %></h3>
-          <div><%= article.body %></div>
-          <div class="comment-count">
-            <%= article.comments.count %>
-            Comment<%= article.comments.count == 1 ? '' : 's' %>
-          </div>
+    <% @articles.each do |article| %>
+      <% unless article.archived? %>
+      <div class="article-summary">
+        <h3><%= link_to article.title, article %></h3>
+        <div><%= article.body %></div>
+        <div class="comment-count">
+          <%= article.comments.count %>
+          Comment<%= article.comments.count == 1 ? '' : 's' %>
         </div>
-        <% end %>
+      </div>
       <% end %>
-    </ol>
+    <% end %>
   </section>
 
   <p><%= link_to "New Article", new_article_path %></p>
