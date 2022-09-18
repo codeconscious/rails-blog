@@ -1,3 +1,3 @@
-# Blog
+# Ruby on Rails Blog
 
-Runs on Ruby v3.1.2
+This blog runs on Ruby v3.1.2. To run it from the terminal, run `bin/rails server`.
