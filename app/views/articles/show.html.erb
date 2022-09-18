@@ -1,27 +1,55 @@
-<h1><%= @article.title %></h1>
+<header class="container">
+  <hgroup>
+    <h1>雑談用のテストブログ</h1>
+    <h2><%= Article.public_count %> Articles and <%= Comment.public_count %> Comments</h2>
+  </hgroup>
+</header>
 
-<p><%= @article.body %></p>
+<h2 class="container">
+  <%= @article.title %>
+</h2>
 
-<p class='navigation'>
-  <% if @prev_id %>
-    <a href="./<%= @prev_id %>">Previous</a> |
-  <% end %>
-  <a href="/">Back to Articles</a>
-  <% if @next_id  %>
-    | <a href="./<%= @next_id %>">Next</a>
-  <% end %>
-</p>
+<main class="container" style="padding-top: 0">
+  <section>
+    <p><%= @article.body %></p>
 
-<p>
-  <%= link_to "Edit", edit_article_path %> |
-  <%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
-</p>
+    <nav>
+      <ul>
+        <% if @prev_id %>
+          <li>
+            <a href="./<%= @prev_id %>">前へ</a>
+          </li>
+        <% end %>
+        <li>
+          <a href="/">記事一覧</a>
+        </li>
+        <% if @next_id  %>
+          <li>
+            <a href="./<%= @next_id %>">次へ</a>
+          </li>
+        <% end %>
+      </ul>
+      <ul>
+        <li>
+          <%= link_to "編集", edit_article_path, role: "button", class: "secondary" %>
+        </li>
+        <li>
+          <%= link_to "削除", article_path(@article), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      }, role: "button" %>
+        </li>
+      </ul>
+    </nav>
+  </section>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+  <section>
+    <h3>Comments</h3>
+    <%= render @article.comments %>
+  </section>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <section id="form">
+    <h3>Add a comment:</h3>
+    <%= render 'comments/form' %>
+  </section>
+</main>

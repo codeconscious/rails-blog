@@ -1,16 +1,25 @@
-<h1>雑談用のテストブログ</h1>
+<header class="container">
+  <hgroup>
+    <h1>雑談用のテストブログ</h1>
+    <h2><%= Article.public_count %> Articles and <%= Comment.public_count %> Comments</h2>
+  </hgroup>
+</header>
 
-<h2><%= Article.public_count %> Articles and <%= Comment.public_count %> Comments!</h2>
+<main class="container">
 
-<ol>
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-      <li>
-        <%= link_to article.title, article %>
-        ("<%= article.body %>")
-      </li>
-    <% end %>
-  <% end %>
-</ol>
 
-<p><%= link_to "New Article", new_article_path %></p>
+  <section>
+    <ol>
+      <% @articles.each do |article| %>
+        <% unless article.archived? %>
+          <li>
+            <%= link_to article.title, article %>
+            ("<%= article.body %>")
+          </li>
+        <% end %>
+      <% end %>
+    </ol>
+  </section>
+
+  <p><%= link_to "New Article", new_article_path %></p>
+</main>
