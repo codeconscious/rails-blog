@@ -6,8 +6,6 @@
 </header>
 
 <main class="container">
-
-
   <section>
     <ol>
       <% @articles.each do |article| %>
@@ -15,6 +13,11 @@
           <li>
             <%= link_to article.title, article %>
             ("<%= article.body %>")
+            <br />
+            <small>
+              <%= article.comments.count %>
+              Comment<%= article.comments.count == 1 ? '' : 's' %>
+            </small>
           </li>
         <% end %>
       <% end %>
