@@ -1,6 +1,10 @@
 <% unless comment.archived? %>
   <p>
-  <strong><%= comment.commenter %></strong>:
-  <%= comment.body %>
+    <strong><%= comment.commenter %></strong>:
+    <%= comment.body %>
+    <%= link_to "削除", [comment.article, comment], data: {
+              turbo_method: :delete,
+              turbo_confirm: "本当にいいですか。"
+            } %>
   </p>
 <% end %>
