@@ -17,15 +17,15 @@
       <ul>
         <% if @prev_id %>
           <li>
-            <a href="./<%= @prev_id %>">前へ</a>
+            <a href="./<%= @prev_id %>" role="button" class="outline">前へ</a>
           </li>
         <% end %>
         <li>
-          <a href="/">記事一覧</a>
+          <a href="/" role="button" class="outline">記事一覧</a>
         </li>
         <% if @next_id  %>
           <li>
-            <a href="./<%= @next_id %>">次へ</a>
+            <a href="./<%= @next_id %>" role="button" class="outline">次へ</a>
           </li>
         <% end %>
       </ul>
