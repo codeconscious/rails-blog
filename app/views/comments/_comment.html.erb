@@ -5,6 +5,7 @@
     <%= link_to "削除", [comment.article, comment], data: {
               turbo_method: :delete,
               turbo_confirm: "本当にいいですか。"
-            } %>
+            }, role: "button", class: "secondary outline",
+            style: "margin-left: 1em" %>
   </p>
 <% end %>
