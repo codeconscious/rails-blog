@@ -11,7 +11,7 @@
 
 <main class="container" style="padding-top: 0">
   <section>
-    <p><%= @article.body %></p>
+    <p><%= h(@article.body).gsub(/\n/, '<br/>').html_safe %></p>
 
     <nav>
       <ul>
