@@ -51,12 +51,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body, :status)
   end
-
-  def next(current_id)
-
-  end
-
-  def prev(current_id)
-    Article.where('id < ?', current_id).last
-  end
 end

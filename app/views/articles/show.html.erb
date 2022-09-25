@@ -15,7 +15,7 @@
 
     <nav>
       <ul>
-        <% if @first_id %>
+        <% if @first_id && @first_id != @article.id %>
           <li>
             <a href="./<%= @first_id %>" role="button" class="outline">First</a>
           </li>
@@ -33,7 +33,7 @@
             <a href="./<%= @next_id %>" role="button" class="outline">Next</a>
           </li>
         <% end %>
-        <% if @last_id %>
+        <% if @last_id && @last_id != @article.id %>
           <li>
             <a href="./<%= @last_id %>" role="button" class="outline">Last</a>
           </li>
