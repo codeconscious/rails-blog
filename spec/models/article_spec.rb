@@ -21,6 +21,7 @@ RSpec.describe Article, type: :model do
     end
 
     context 'create' do
+      # Or use "let!" to explicitly run before each test instead of lazily.
       let (:params) { { title: 'Test Title', body: 'Test body.', status: 'public' } }
       before(:each) do
         Article.new(params).save
