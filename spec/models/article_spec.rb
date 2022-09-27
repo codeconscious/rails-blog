@@ -26,7 +26,7 @@ RSpec.describe Article, type: :model do
         article = Article.new(id: 0, title: 'テスト用のタイトル', body: 'テスト用の文章です。', status: 'public')
         expect(article.id).to eq(0)
         expect(article.title).to eq('テスト用のタイトル')
-        expect(article.body).to eq('テスト用の文章。')
+        expect(article.body).to eq('テスト用の文章です。')
         expect(article.status).to eq('public')
       end
     end
