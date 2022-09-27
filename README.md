@@ -1,7 +1,9 @@
-# Ruby on Rails Blog
+# Rails Blog
 
-This blog runs on Ruby v3.1.2.
+This blog runs on Ruby v3.1.2 and Rails 7.0.3.
 
-To run it from the terminal, run `bin/rails server`.
+Run it from the terminal using `bin/rails server`.
 
-To run tests, run `rsync`.
+## Testing
+
+Run the tests using `rsync`.
