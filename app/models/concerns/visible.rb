@@ -1,3 +1,4 @@
+# Concern regarding the visibility status of items.
 module Visible
   extend ActiveSupport::Concern
 
