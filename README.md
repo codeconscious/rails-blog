@@ -6,4 +6,8 @@ Run it from the terminal using `bin/rails server`.
 
 ## Testing
 
-Run the tests using `rsync`.
+Run all tests simply using `rsync`.
+
+## Annotations
+
+This repo uses the [Annotate](https://github.com/ctran/annotate_models) gem to automatically annotate classes with schema and routes info via comments.
