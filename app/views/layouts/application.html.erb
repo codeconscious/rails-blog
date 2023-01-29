@@ -3,7 +3,8 @@
   <head>
     <title>雑談用のテストブログ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <%# <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"> %>
+    <link rel="stylesheet" href="https://unpkg.com/98.css" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +13,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="window">
+      <%= yield %>
+    </div>
     <footer class="container">
       <small>Built with Ruby on Rails and <a href="https://picocss.com">Pico</a></small>
     </footer>
